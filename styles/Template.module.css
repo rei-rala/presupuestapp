@@ -1,0 +1,77 @@
+.navbar,
+.footer {
+  position: fixed;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--theme-color);
+}
+
+.navbar {
+  top: 0;
+
+  justify-content: space-between;
+  height: var(--navbar-height);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  list-style: none;
+}
+
+.navbar nav li {
+  cursor: pointer;
+  border-radius: var(--def-border-radius);
+  padding: 0.5rem 1rem;
+  transition: all 0.25s ease;
+}
+
+.navbar nav li:hover {
+  cursor: pointer;
+  background-color: var(--black);
+  color: var(--light);
+}
+
+.navbar nav li:active {
+  transform: scale(0.95);
+}
+
+.footer {
+  bottom: 0;
+
+  justify-content: center;
+  gap: 0.5rem;
+
+  height: var(--footer-height);
+  border-top: 1px solid var(--border-color);
+}
+
+.footer a {
+  display: grid;
+  place-items: center;
+}
+
+.section {
+  height: 100%;
+  width: calc(100% - 2rem);
+
+  margin: 1rem;
+  margin-top: calc(var(--navbar-height) + 1rem);
+  margin-bottom: calc(var(--footer-height) + 1rem);
+
+  padding: var(--def-padding);
+
+  background-color: var(--theme-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--def-border-radius);
+
+  box-shadow: 5px 5px 5px hsl(0, 0%, 50%);
+}

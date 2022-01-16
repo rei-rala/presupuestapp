@@ -1,3 +1,29 @@
+:root {
+  --theme-color: hsl(120, 100%, 100%);
+  --border-color: #eaeaea;
+
+  --light: hsl(0, 0%, 98%);
+  --black: hsl(212, 14%, 25%);
+
+  --color-success: hsl(176, 56%, 55%);
+  --color-alert: hsl(0, 100%, 71%);
+  --color-warn: hsl(50, 100%, 71%);
+
+  --def-padding: 0.75rem;
+  --def-border-radius: 0.25rem;
+
+  --navbar-height: 3rem;
+  --footer-height: calc(var(--navbar-height) / 1.5);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
 html,
 body {
   padding: 0;
@@ -6,11 +32,25 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+body {
+  background-color: var(--light);
+  overflow: hidden scroll;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+p {
+  text-align: justify;
+}
+
 a {
   color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
 }
