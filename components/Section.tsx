@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Section = (props: any) => {
+const Section: React.FC<{ style: string }> = (props: any) => {
   return (
-    <section {...props}>
+    <section className={props.style}>
       {props.children}
     </section>
   )

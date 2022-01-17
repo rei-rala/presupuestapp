@@ -4,12 +4,12 @@ import Head from 'next/head'
 import { Navbar, Section, Footer } from '../components'
 import styles from '../styles/Base.module.css'
 
-const Home: NextPage = () => {
+const SpreadsheetsPage: NextPage = () => {
 
   return (
     <>
       <Head>
-        <title>Home - PresupuestAPP</title>
+        <title>Planillas - PresupuestAPP</title>
         <meta name="description" content="Presupuestos" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -17,7 +17,7 @@ const Home: NextPage = () => {
       <Navbar style={styles.navbar} />
 
       <Section style={styles.section}>
-        <h1>HOME</h1>
+        <h1>PLANILLAS</h1>
       </Section>
 
       <Footer style={styles.footer} />
@@ -26,4 +26,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default SpreadsheetsPage
