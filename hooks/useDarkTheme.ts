@@ -12,7 +12,7 @@ const useDarkTheme = () => {
   useEffect(() => {
     const BODY_CLASSES = document.querySelector('body')?.classList
     if (BODY_CLASSES) {
-      BODY_CLASSES.forEach(x => x.includes('theme-') && BODY_CLASSES.remove(x))
+      BODY_CLASSES.forEach(bodyClass => bodyClass.includes('theme-') && BODY_CLASSES.remove(bodyClass))
       BODY_CLASSES.add(`theme-${darkTheme ? 'dark' : 'light'}`)
     }
 

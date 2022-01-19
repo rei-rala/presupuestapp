@@ -4,7 +4,14 @@ import Head from 'next/head'
 import { Navbar, Section, Footer } from '../components'
 import styles from '../styles/Base.module.css'
 
-const UserPage: NextPage = () => {
+import Users from '../db/users.json'
+import { User } from '../models'
+
+import { shortify } from '../utils'
+
+const UserPage: NextPage<{ user: User }> = ({ user }) => {
+
+  const shortedId = shortify(user.id)
 
   return (
     <>
@@ -17,13 +24,23 @@ const UserPage: NextPage = () => {
       <Navbar style={styles.navbar} />
 
       <Section style={styles.section}>
-        <h1>USUARIO</h1>
+        <h1>{user.userName} <span className='faint'>#{shortedId}</span> </h1>
       </Section>
 
       <Footer style={styles.footer} />
 
     </>
   )
+}
+
+export async function getServerSideProps() {
+  let user = await Users.users[1]
+
+  return {
+    props: {
+      user
+    }
+  }
 }
 
 export default UserPage
