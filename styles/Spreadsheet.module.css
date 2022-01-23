@@ -1,0 +1,46 @@
+.table {
+  width: 100%;
+  height: 100%;
+
+  /* Allows user selection */
+  -webkit-user-select: text; /* Safari */
+  -moz-user-select: text; /* Firefox */
+  -ms-user-select: text; /* IE10+/Edge */
+  user-select: text; /* Standard */
+
+  border-collapse: collapse;
+  overflow: auto hidden;
+}
+
+.table thead tr {
+  text-transform: capitalize;
+}
+
+.table .nulled {
+  color: red;
+}
+
+.table th,
+.table td {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--color-sky);
+}
+
+.title {
+  text-transform: capitalize;
+
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.row span,
+.row input {
+  height: 100%;
+  width: 100%;
+}
+
+.spreadsheetInfo {
+  margin-top: 2rem;
+  text-align: center;
+}

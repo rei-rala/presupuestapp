@@ -4,14 +4,15 @@ import Head from 'next/head'
 import { Navbar, Section, Footer } from '../components'
 import styles from '../styles/Base.module.css'
 
-import Users from '../db/users.json'
+import USERS from '../db/users.json'
 import { User } from '../models'
 
-import { shortify } from '../utils'
+import { shortifyID, formatDate } from '../utils'
+
 
 const UserPage: NextPage<{ user: User }> = ({ user }) => {
 
-  const shortedId = shortify(user.id)
+  const shortedId = shortifyID(user.id, 6)
 
   return (
     <>
@@ -21,24 +22,32 @@ const UserPage: NextPage<{ user: User }> = ({ user }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar style={styles.navbar} />
+      <Navbar className={styles.navbar} />
 
-      <Section style={styles.section}>
-        <h1>{user.userName} <span className='faint'>#{shortedId}</span> </h1>
-      </Section>
+      <Section className={styles.section}>
+        <h1> Configuraciones de usuario</h1>
+        <hr />
 
-      <Footer style={styles.footer} />
+        <span title={user.id}> {user.userName} id #{shortedId}</span>
+        <hr />
+        <span className='faint center'>Usuario desde: {formatDate(user.registered).full}</span>
+
+
+      </Section >
+
+      <Footer className={styles.footer} />
 
     </>
   )
 }
 
 export async function getServerSideProps() {
-  let user = await Users.users[1]
+  // db async interaction
+  let user = await USERS.users[1]
 
   return {
     props: {
-      user
+      user,
     }
   }
 }

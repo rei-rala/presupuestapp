@@ -85,3 +85,14 @@
 
   box-shadow: 5px 5px 5px hsl(0, 0%, 50%);
 }
+
+.spreadsheetLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.spreadsheetLinks a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--color-alert);
+}

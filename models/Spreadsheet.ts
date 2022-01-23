@@ -30,16 +30,20 @@ class Row {
 class Spreadsheet {
   id: string;
   author: string;
-  spreadsheetTitle: string;
+  title: string;
   rows: Row[];
-  columns: string[]
+  columns: string[];
+  created: Date;
+  updated: Date;
 
-  constructor(spreadsheetTitle: string, author: string, ...columns: string[]) {
+  constructor(title: string, author: string, ...columns: string[]) {
     this.id = uuidv4();
-    this.spreadsheetTitle = spreadsheetTitle;
+    this.title = title;
     this.author = author;
     this.columns = columns.length > 0 ? columns : ['sin titulo'];
     this.rows = [];
+    this.created = new Date();
+    this.updated = new Date();
   }
 
   addRow(isTitle: boolean = false) {
@@ -91,9 +95,10 @@ class Spreadsheet {
 
 export default Spreadsheet
 
-//const a = new Spreadsheet('first spreadsheet', uuidv4(), 'descripcion', 'cantidad', 'unidad', 'sub total') // 4 titulos seran default en este test de proyecto
-//a.addRow(true)
-//a.addRow()
-//a.addRow()
-//a.addRow(true)
-//a.addRow()
+const a = new Spreadsheet('first spreadsheet', uuidv4(), 'descripcion', 'cantidad', 'unidad', 'sub total') // 4 titulos seran default en este test de proyecto
+a.addRow()
+a.addRow()
+a.addRow(true)
+a.addRow()
+a.getTableContent()
+console.log(JSON.stringify(a))

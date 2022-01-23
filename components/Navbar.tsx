@@ -25,14 +25,14 @@ const NavbarLink: React.FC<INavbarLinkProps> = ({ currentPath, linkPath, text })
   )
 }
 
-const Navbar: React.FC<{ style: string }> = ({ style }) => {
+const Navbar = (props: any) => {
   const { darkTheme, toggleDarkTheme } = useDarkTheme()
 
   const router = useRouter()
   let path = router.pathname
 
   return (
-    <div className={style}>
+    <div {...props}>
       <span>
         Logo
       </span>

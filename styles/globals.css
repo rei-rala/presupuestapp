@@ -6,6 +6,7 @@
   --color-success: hsl(130, 56%, 40%);
   --color-alert: hsl(0, 100%, 40%);
   --color-warn: hsl(50, 100%, 40%);
+  --color-sky: hsl(200, 100%, 50%);
 
   --border-color: hsla(0, 0%, 92%, 0.75);
   --border-color-secondary: hsla(0, 0%, 0%, 0.25);
@@ -28,6 +29,7 @@
   --color-success: hsl(130, 56%, 71%);
   --color-alert: hsl(0, 100%, 71%);
   --color-warn: hsl(50, 100%, 71%);
+  --color-sky: hsl(200, 100%, 81%);
 }
 
 * {
@@ -55,6 +57,10 @@ body {
   user-select: none; /* Standard */
 }
 
+section {
+  overflow: hidden auto;
+}
+
 h1,
 h2,
 h3,
@@ -74,6 +80,15 @@ a {
   text-decoration: none;
 }
 
+hr {
+  border-color: var(--theme-color-secondary);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 button:not(.themeToggler) {
   cursor: pointer;
   min-width: 5rem;
@@ -88,7 +103,7 @@ button:active {
 }
 
 nav ul li {
-  border-bottom: 2px solid transparent;
+  border-bottom: 0.2rem solid transparent;
 }
 
 nav ul li.current {
@@ -126,4 +141,14 @@ nav ul li.current {
 
 .faint {
   opacity: 0.5;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.nulled {
+  color: red;
 }

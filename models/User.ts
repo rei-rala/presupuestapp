@@ -5,13 +5,15 @@ class User {
   id: string;
   userName: string;
   email: string;
-  spreadsheets: Spreadsheet[];
+  spreadsheets: string[];
+  registered: Date;
 
   constructor(userName: string, email: string) {
     this.id = uuidv4();
     this.userName = userName;
     this.email = email;
     this.spreadsheets = [];
+    this.registered = new Date();
   }
 }
 

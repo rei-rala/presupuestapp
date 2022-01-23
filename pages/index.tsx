@@ -14,13 +14,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar style={styles.navbar} />
+      <Navbar className={styles.navbar} />
 
-      <Section style={styles.section}>
+      <Section className={styles.section}>
         <h1>HOME</h1>
       </Section>
 
-      <Footer style={styles.footer} />
+      <Footer className={styles.footer} />
 
     </>
   )

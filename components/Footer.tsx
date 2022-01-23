@@ -3,9 +3,9 @@ import React from "react";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-const Footer: React.FC<{ style: string }> = ({ style }) => {
+const Footer = (props: any) => {
   return (
-    <footer className={style}>
+    <footer {...props}>
       <strong>by rei-rala</strong>
 
       <a
